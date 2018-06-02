@@ -3,14 +3,14 @@ package com.beginningreact.beginningreact.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
+import org.seasar.doma.Column;
+import org.seasar.doma.Entity;
+import org.seasar.doma.Id;
+import org.seasar.doma.Table;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "address")
+@Table
 public class Address {
 
     @Id
@@ -28,9 +28,10 @@ public class Address {
     @Column
     String zipcode;
 
+    @Column
+    String geoId;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(nullable = true, name = "lat")
     Geo geo;
+
 }
 

@@ -1,16 +1,15 @@
 package com.beginningreact.beginningreact.repository;
 
-import com.beginningreact.beginningreact.domain.Users;
+import com.beginningreact.beginningreact.domain.Address;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
 
-import java.util.List;
-
 
 @Dao
 @ConfigAutowireable
-public interface UsersRepository{
+public interface AddressRepository {
+
     @Select
-    List<Users> findAll();
+    Address getOne(String addressId);
 }
