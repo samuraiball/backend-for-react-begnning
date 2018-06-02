@@ -3,14 +3,14 @@ package com.beginningreact.beginningreact.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.seasar.doma.Column;
-import org.seasar.doma.Entity;
-import org.seasar.doma.Id;
-import org.seasar.doma.Table;
+import org.seasar.doma.*;
+import org.seasar.doma.jdbc.entity.NamingType;
 
-@Entity
+@Entity(immutable = true, naming = NamingType.LENIENT_SNAKE_LOWER_CASE)
 @Data
-@Table
+@Table(name = "geo")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Address {
 
     @Id
@@ -30,8 +30,6 @@ public class Address {
 
     @Column
     String geoId;
-
-    Geo geo;
-
 }
+
 

@@ -24,6 +24,8 @@ public class UsersRestController {
     @Autowired
     AddressService addressService;
 
+
+
     @GetMapping("users")
     public List<UserDto> getUser() {
 
@@ -33,7 +35,8 @@ public class UsersRestController {
 
         userlist.forEach(users -> {
             UserDto userDto = new UserDto();
-            userDto.setAddress(addressService.getOne(users.getAddressId()));
+            BeanUtils.copyProperties(users,userDto);
+            userDto.setAddressDto(addressService.getOne(users.getAddressId()));
             userDtoList.add(userDto);
         });
         return userDtoList;

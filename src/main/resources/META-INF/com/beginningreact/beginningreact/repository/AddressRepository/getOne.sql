@@ -1,1 +1,1 @@
-SELECT * FROM address WHERE addressId = 1;
+SELECT * FROM address WHERE address_id = /*addressId*/1;

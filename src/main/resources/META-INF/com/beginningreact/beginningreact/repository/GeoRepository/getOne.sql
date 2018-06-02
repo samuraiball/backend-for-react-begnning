@@ -1,0 +1,1 @@
+SELECT * FROM geo WHERE geo_id = /*geoId*/1;

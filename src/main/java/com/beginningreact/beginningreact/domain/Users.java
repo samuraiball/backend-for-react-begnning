@@ -7,13 +7,14 @@ import org.seasar.doma.Column;
 import org.seasar.doma.Entity;
 import org.seasar.doma.Id;
 import org.seasar.doma.Table;
+import org.seasar.doma.jdbc.entity.NamingType;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-@Entity
+@Entity(immutable = true, naming = NamingType.LENIENT_SNAKE_LOWER_CASE)
 public class Users {
 
     @Id
@@ -23,7 +24,7 @@ public class Users {
     String name;
 
     @Column
-    String userName;
+    String username;
 
     @Column
     String email;
@@ -35,6 +36,9 @@ public class Users {
     @Column
     String website;
 
-    @Column
+    @Column(name = "address_id")
     String addressId;
+
+    @Column(name = "company_id")
+    String companyId;
 }

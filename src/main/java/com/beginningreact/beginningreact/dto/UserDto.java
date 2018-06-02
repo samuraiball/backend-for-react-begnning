@@ -11,11 +11,10 @@ import lombok.NoArgsConstructor;
 public class UserDto {
 
     String Id;
+    String name;
     String username;
     String email;
-    Address address;
+    AddressDto addressDto;
     String phone;
     String website;
-
-
 }

@@ -1,13 +1,13 @@
 package com.beginningreact.beginningreact.repository;
 
-import com.beginningreact.beginningreact.domain.Geo;
+import com.beginningreact.beginningreact.domain.Company;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
 
 @Dao
 @ConfigAutowireable
-public interface GeoRepository {
+public interface CompanyRepository {
     @Select
-    Geo getOne(String geoId);
+    Company getOne(String companyId);
 }

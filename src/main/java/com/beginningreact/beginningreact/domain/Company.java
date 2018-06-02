@@ -10,7 +10,7 @@ import org.seasar.doma.Table;
 
 
 @Table(name = "company")
-@Entity
+@Entity(immutable = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
