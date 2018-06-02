@@ -3,14 +3,17 @@ package com.beginningreact.beginningreact.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.seasar.doma.Column;
+import org.seasar.doma.Entity;
+import org.seasar.doma.Id;
+import org.seasar.doma.Table;
 
-import javax.persistence.*;
 
-@Entity
+@Table(name = "company")
+@Entity(immutable = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "company")
 public class Company {
 
     @Id
@@ -21,6 +24,4 @@ public class Company {
 
     @Column
     String bs;
-
-
 }

@@ -1,0 +1,1 @@
+SELECT * FROM company WHERE company_id = /*companyId*/1;

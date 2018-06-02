@@ -3,43 +3,42 @@ package com.beginningreact.beginningreact.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.seasar.doma.Column;
+import org.seasar.doma.Entity;
+import org.seasar.doma.Id;
+import org.seasar.doma.Table;
+import org.seasar.doma.jdbc.entity.NamingType;
 
-import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-@Entity
+@Entity(immutable = true, naming = NamingType.LENIENT_SNAKE_LOWER_CASE)
 public class Users {
 
     @Id
     String Id;
 
-    @Column(nullable = false)
+    @Column
     String name;
 
-    @Column(nullable = false)
-    String userName;
+    @Column
+    String username;
 
     @Column
     String email;
 
 
-    @Column(nullable = false)
-    String userAddressId;
-
-    @Column(nullable = false)
+    @Column
     String phone;
 
-    @Column(nullable = false)
+    @Column
     String website;
 
-    @OneToOne(cascade= CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(nullable = true, name = "addressId")
-    Address address;
+    @Column(name = "address_id")
+    String addressId;
 
-    @OneToOne(cascade= CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(nullable = true, name = "companyName")
-    Company company;
+    @Column(name = "company_id")
+    String companyId;
 }
