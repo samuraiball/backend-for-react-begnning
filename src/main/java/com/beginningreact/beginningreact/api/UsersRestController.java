@@ -44,7 +44,7 @@ public class UsersRestController {
 
     @PostMapping(path = "create")
     @ResponseStatus(HttpStatus.CREATED)
-    public Users create(@RequestParam Users users) {
+    public Users create(@RequestBody Users users) {
         return null;
     }
 }
