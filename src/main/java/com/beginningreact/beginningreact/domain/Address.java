@@ -6,15 +6,16 @@ import lombok.NoArgsConstructor;
 import org.seasar.doma.*;
 import org.seasar.doma.jdbc.entity.NamingType;
 
+
 @Entity(immutable = true, naming = NamingType.LENIENT_SNAKE_LOWER_CASE)
 @Data
-@Table(name = "geo")
+@Table(name = "address")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Address {
 
     @Id
-    String addressId;
+    int addressId;
 
     @Column
     String street;
@@ -29,7 +30,7 @@ public class Address {
     String zipcode;
 
     @Column
-    String geoId;
+    int geoId;
 }
 
 

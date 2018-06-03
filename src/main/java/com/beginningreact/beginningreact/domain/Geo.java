@@ -3,12 +3,9 @@ package com.beginningreact.beginningreact.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.seasar.doma.Entity;
-import org.seasar.doma.Table;
+import org.seasar.doma.*;
 import org.seasar.doma.jdbc.entity.NamingType;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
 
 
 @Data
@@ -19,12 +16,11 @@ import javax.persistence.Id;
 public class Geo {
 
     @Id
-    String geo_id;
+    int geoId;
 
+    @Column
     Double lat;
 
     @Column
     Double lng;
-
-
 }

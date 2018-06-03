@@ -3,11 +3,10 @@ package com.beginningreact.beginningreact.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.seasar.doma.Column;
-import org.seasar.doma.Entity;
-import org.seasar.doma.Id;
-import org.seasar.doma.Table;
+import org.seasar.doma.*;
 import org.seasar.doma.jdbc.entity.NamingType;
+
+import javax.validation.constraints.NotNull;
 
 
 @Data
@@ -18,15 +17,18 @@ import org.seasar.doma.jdbc.entity.NamingType;
 public class Users {
 
     @Id
-    String Id;
+    int Id;
 
     @Column
+    @NotNull
     String name;
 
     @Column
+    @NotNull
     String username;
 
     @Column
+    @NotNull
     String email;
 
 
@@ -37,8 +39,8 @@ public class Users {
     String website;
 
     @Column(name = "address_id")
-    String addressId;
+    int addressId;
 
     @Column(name = "company_id")
-    String companyId;
+    int companyId;
 }
