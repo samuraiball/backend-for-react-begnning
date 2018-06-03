@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/")
 public class UsersRestController {
 
     @Autowired
@@ -24,8 +25,7 @@ public class UsersRestController {
     @Autowired
     AddressService addressService;
 
-
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("users")
     public List<UserDto> getUser() {
 
